@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="main_header">
+    <a href="" class="home_link">sunnyside</a>
+    <button class="menu_btn" onclick="toggleMenu()"><img src="images/icon-hamburger.svg" alt=""></button>
+    <nav>
+      <a href="">About</a>
+      <a href="">Services</a>
+      <a href="">Projects</a>
+      <a href="" id="contact_btn">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <picture class="bg">
+      <source media="(max-width: 768px)" srcset="images/mobile/image-header.jpg">
+      <img src="images/desktop/image-header.jpg" alt="" style="width:100%">
+    </picture>
+
+    <div class="overlay_center">
+      <p class="title">We are creatives</p>
+      <button class="arrow_down_btn" type="button"><img src="images/icon-arrow-down.svg" alt=""></button>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="item reversed">
+      <picture class="image">
+        <source media="(max-width: 400px)" srcset="images/mobile/image-transform.jpg">
+        <img src="images/desktop/image-transform.jpg" alt="" style="width:100%">
+      </picture>
+      <div class="text_container">
+        <header>Transform your brand</header>
+        <p class="text">
+          We are a full-service creative agency specializing in helping brands grow fast.
+          Engage your clients through compelling visuals that do most of the marketing for you.
+        </p>
+        <a href="" class="learn_more_btn yellow">Learn more</a>
+      </div>
+    </div>
+    <div class="item">
+      <picture class="image">
+        <source media="(max-width: 400px)" srcset="images/mobile/image-stand-out.jpg">
+        <img src="images/desktop/image-stand-out.jpg" alt="" style="width:100%;">
+      </picture>
+      <div class="text_container">
+        <header>Stand out to the right audience</header>
+        <p class="text">
+          We are a full-service creative agency specializing in helping brands grow fast.
+          Engage your clients through compelling visuals that do most of the marketing for you.
+        </p>
+        <a href="" class="learn_more_btn red">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  Learn more
+
+  Graphic design
+  Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential
+  clients’ attention.
+
+  Photography
+  Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
+
+  Client testimonials
+
+  We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
+  Emily R.
+  Marketing Director
+
+  Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable
+  experience.
+  Thomas S.
+  Chief Operating Officer
+
+  Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
+  Jennie F.
+  Business Owner
+
+  About
+  Services
+  Projects
+  Contact
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script defer src="script.js"></script>
+</body>
+
+</html>
