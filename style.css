@@ -12,7 +12,8 @@
     --Yellow: hsl(51, 100%, 49%);
     --graphic-design-text-color: hsl(167, 40%, 24%);
     --photography-text-color: hsl(198, 62%, 26%);
-    --footer-color: hsl(168, 34%, 41%);
+    --footer-bg: rgb(143 212 198);
+    --footer-color: rgb(49 120 102);
 
     --Very-dark-desaturated-blue: hsl(212, 27%, 19%);
     --Very-dark-grayish-blue: hsl(213, 9%, 39%);
@@ -23,6 +24,8 @@
     --first-font: "Barlow", san-serif;
     --second-font: "Fraunces", san-serif;
 
+
+    --item-padding-inline: min(10rem, 5vw);
 }
 
 /* || RESET CSS */
@@ -32,18 +35,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: var(--first-font);
-    font-size: 18px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    min-height: 100vh;
-    width: 100%;
-
-}
 
 a {
     text-decoration: none;
@@ -63,6 +54,23 @@ picture img {
 }
 
 /* || GENERAL STYLES */
+
+body {
+    font-family: var(--first-font);
+    font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh;
+    width: 100%;
+
+}
+
+main{
+    flex-grow:1;
+}
 
 /* main header */
 .main_header {
@@ -164,13 +172,13 @@ picture img {
     /* margin-bottom:10em; */
 }
 
-/* Gallery Section */
+/* Tiles Section */
 
-.gallery {
+.tiles {
     width: 100%;
 }
 
-.gallery .item {
+.tiles .item {
     width: 100%;
 
     display: flex;
@@ -179,11 +187,11 @@ picture img {
 }
 
 /* reversed order item */
-.gallery .item.reversed {
+.tiles .item.reversed {
     flex-direction: row-reverse;
 }
 
-.gallery .item :is(.image, .text_container) {
+.tiles .item :is(.image, .text_container) {
     width: 50%;
     flex-basis: 50%;
     flex-grow: 1;
@@ -191,16 +199,16 @@ picture img {
     overflow: hidden;
 }
 
-.gallery .item :is(.image, .text_container) {
+.tiles .item :is(.image, .text_container) {
     align-self: stretch;
 }
 
-.gallery .item .text_container {
+.tiles .item .text_container {
     background-color: var(--White);
     color: var(--Very-dark-desaturated-blue);
 
     padding: min(5vw, 3em);
-    padding-inline:min(10rem,5vw);
+    padding-inline: var(--item-padding-inline);
     width: 20em;
     margin-inline: auto;
 
@@ -212,21 +220,21 @@ picture img {
 
 }
 
-.gallery .item .text_container header {
+.tiles .item .text_container header {
     font-family: var(--second-font);
     font-size: 2.5em;
     font-weight: 800;
     /* width: 400px; */
 }
 
-.gallery .item .text_container .text {
+.tiles .item .text_container .text {
     color: var(--Dark-grayish-blue);
     font-size: 0.9em;
 
 }
 
 
-.gallery .item .text_container .learn_more_btn {
+.tiles .item .text_container .learn_more_btn {
     font-family: var(--second-font);
     text-transform: uppercase;
     font-size: 0.9em;
@@ -239,7 +247,7 @@ picture img {
 
 }
 
-.gallery .item .text_container .learn_more_btn::before {
+.tiles .item .text_container .learn_more_btn::before {
     display: block;
     content: "";
     position: absolute;
@@ -257,58 +265,174 @@ picture img {
 
 }
 
-.gallery .item .text_container .learn_more_btn:hover::before {
+.tiles .item .text_container .learn_more_btn:hover::before {
     opacity: 1;
 }
 
 
 /*yellow*/
-.gallery .item .text_container .learn_more_btn.yellow::before {
+.tiles .item .text_container .learn_more_btn.yellow::before {
     background: var(--Yellow);
 }
 
 /*red*/
-.gallery .item .text_container .learn_more_btn.red::before {
+.tiles .item .text_container .learn_more_btn.red::before {
     background: var(--Soft-red);
 }
 
 
-/* gallery_item */
-.gallery .item .gallery_item{
-    width:50%;
-    position:relative;
+/* special_item */
+.tiles .item .special_item {
+    width: 50%;
+    position: relative;
 }
 
-.gallery .item .gallery_item.graphic-design{
+.tiles .item .special_item.graphic-design {
     color: var(--graphic-design-text-color);
 }
-.gallery .item .gallery_item.photography{
+
+.tiles .item .special_item.photography {
     color: var(--photography-text-color);
 }
 
-.gallery .item .gallery_item .text_container :is(header,.text){
-    color:inherit;
+.tiles .item .special_item .text_container :is(header, .text) {
+    color: inherit;
+    text-align: center;
 }
 
-.gallery .item .gallery_item .text_container{
-    position:absolute;
-    left:50%;
-    bottom:3em;
-    background-color:transparent;
-    color:inherit;
+.tiles .item .special_item .text_container {
+    position: absolute;
+    left: 50%;
+    bottom: 3em;
+    background-color: transparent;
+    color: inherit;
     padding: 0;
-    padding-inline: 1em;
-    width:100%;
+    padding-inline: 27%;
+    width: 100%;
+    align-items: center;
 
-    transform : translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.tiles .item .special_item .text_container header {
+    font-size: 2em;
 }
 
 
+/* Testimonials Section */
 
+.testimonials {
+    background-color: #fafafa;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
 
+    padding: 12vw;
+}
 
+.testimonials header {
+    text-transform: uppercase;
+    font-family: var(--second-font);
+    font-size: 1em;
+    font-weight: 900;
+    color: var(--Grayish-blue);
+    letter-spacing: 0.2em;
+}
 
+.testimonials .items {
+    display: flex;
+    align-items: center;
+    gap: 2em;
 
+}
+
+.testimonials .items .item {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 2.8em;
+}
+
+.testimonials .items .item .profile_pic {
+    width: 4em;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+}
+
+.testimonials .items .item .text {
+    color: var(--Very-dark-grayish-blue);
+    text-align: center;
+}
+
+.testimonials .items .item .author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.testimonials .items .item .author .name {
+    color: var(--Very-dark-desaturated-blue);
+    font-family: var(--second-font);
+    font-size: 1.1em;
+    font-weight: 900;
+}
+
+.testimonials .items .item .author .designation {
+    color: var(--Grayish-blue);
+    font-size: 0.8em;
+}
+
+/* Gallery Section */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Footer Section */
+
+footer{
+    background-color: var(--footer-bg);
+    width:100%;
+    padding:3em 2em;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2em;
+
+    position: relative;
+}
+
+footer .company_name{
+    font-size:2em;
+    font-weight: 800;
+    color: var(--footer-color);
+}
+
+footer .links{
+    color:var(--footer-color);
+    display:flex;
+    gap:2em;
+}
+
+footer .socials{
+    margin:2em 0;
+    display:flex;
+    gap:1em;
+}
+
+footer .socials button{
+    border:none;
+    background-color: transparent;
+}
 /* || MEDIA QUERIES */
 
 
@@ -321,6 +445,14 @@ picture img {
     .main_header nav {
         gap: 2em;
     }
+
+    .testimonials{
+        padding: 8vw;
+    }
+    .testimonials .items{
+        gap:1em;
+    }
+
 }
 
 @media screen and (max-width:620px) {
@@ -376,28 +508,49 @@ picture img {
         /* margin-top: 15em; */
     }
 
-    .gallery :is(.item, .item.item.reversed) {
+    .tiles :is(.item, .item.item.reversed) {
         flex-direction: column;
     }
 
-    .gallery .item :is(.image, .text_container) {
+    .tiles .item :is(.image, .text_container) {
         width: 100%;
     }
 
-    .gallery .item .text_container {
+    .tiles .item .text_container {
         align-items: center;
         /* padding: min(5vw, 3em); */
         padding: 3em min(5vw, 1em);
+        padding-inline: var(--item-padding-inline);
 
     }
-    .gallery .item .text_container header{
-        text-align: center;
-    }
-    .gallery .item .text_container .text{
+
+    .tiles .item .text_container header {
         text-align: center;
     }
 
-    .gallery .item .gallery_item{
-        width:100%;
+    .tiles .item .text_container .text {
+        text-align: center;
+    }
+
+    .tiles .item .special_item {
+        width: 100%;
+    }
+    .tiles .item .special_item .text_container{
+        padding-inline: var(--item-padding-inline);
+    }
+
+
+    .testimonials{
+        padding:3em;
+        padding-inline: var(--item-padding-inline);
+    }
+
+    .testimonials .items{
+        flex-direction:  column;
+    }
+
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
