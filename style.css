@@ -26,6 +26,7 @@
 
 
     --item-padding-inline: min(10rem, 5vw);
+    --transition: all 0.3s ease;
 }
 
 /* || RESET CSS */
@@ -112,6 +113,8 @@ main{
     background-color: var(--White);
     color: var(--Very-dark-desaturated-blue);
     padding: 1.2em 2em;
+    transition: var(--transition);
+
 
     border-radius: 50px;
     text-transform: uppercase;
@@ -263,6 +266,8 @@ main{
     z-index: -1;
 
     border-radius: 50px;
+    transition: var(--transition);
+
 
     background: var(--Yellow);
     opacity: 0.4;
@@ -426,6 +431,7 @@ footer .links{
     color:var(--footer-color);
     display:flex;
     gap:2em;
+    font-size: 0.9em;
 }
 
 footer .socials{
@@ -438,12 +444,9 @@ footer .socials button{
     border:none;
     background-color: transparent;
 }
-footer .socials button::before{
-    content: url ( attr(data-url) );
-    display:block;
-}
 
 footer .links a:hover,.socials button:hover svg path{
+    transition: var(--transition);
     color: var(--White);
     fill:var(--White);
 }
