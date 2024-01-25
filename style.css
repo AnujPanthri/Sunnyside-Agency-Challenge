@@ -118,6 +118,10 @@ main{
 
     font-family: var(--second-font);
 }
+.main_header nav>#contact_btn:hover{
+    background-color: #fff5;
+    color: var(--White);
+}
 
 /* || HERO SECTION */
 
@@ -303,13 +307,14 @@ main{
 .tiles .item .special_item .text_container {
     position: absolute;
     left: 50%;
-    bottom: 3em;
+    bottom: 3vw;
     background-color: transparent;
     color: inherit;
     padding: 0;
     padding-inline: 27%;
     width: 100%;
     align-items: center;
+    gap:3vw;
 
     transform: translateX(-50%);
 }
@@ -433,6 +438,17 @@ footer .socials button{
     border:none;
     background-color: transparent;
 }
+footer .socials button::before{
+    content: url ( attr(data-url) );
+    display:block;
+}
+
+footer .links a:hover,.socials button:hover svg path{
+    color: var(--White);
+    fill:var(--White);
+}
+
+
 /* || MEDIA QUERIES */
 
 
@@ -446,12 +462,17 @@ footer .socials button{
         gap: 2em;
     }
 
+    .tiles .item .special_item .text_container {
+        padding-inline: 5vw;
+    }
+
     .testimonials{
         padding: 8vw;
     }
     .testimonials .items{
         gap:1em;
     }
+    
 
 }
 
@@ -536,6 +557,7 @@ footer .socials button{
         width: 100%;
     }
     .tiles .item .special_item .text_container{
+        padding: 4em;
         padding-inline: var(--item-padding-inline);
     }
 
