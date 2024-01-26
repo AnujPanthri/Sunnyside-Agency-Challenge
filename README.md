@@ -10,7 +10,6 @@ This is a solution to the [Sunnyside agency landing page challenge on Frontend M
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
 
 
 ## Overview
@@ -41,6 +40,4 @@ Users should be able to:
 This project was fun but i had trouble making it very responsive , maybe because i didn't did it in a structured way and i didn't used 
 mobile first workflow.
 
-### Continued development
-
-Improve code structure and make it more responsive
+Updated website css and class names and made it again using mobile first workflow and BEM CSS convention.

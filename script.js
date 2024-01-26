@@ -1,4 +1,4 @@
 function toggleMenu(){
-    var menu = document.querySelector(".main_header nav");
-    menu.classList.toggle("active");
+    var menu = document.querySelector(".header__nav");
+    menu.classList.toggle("header__nav--active");
 }
